@@ -25,7 +25,7 @@
         function calcular() {
             var txtv = document.getElementById('txtvel')
             var res = document.getElementById('resultado')
-            var vel = Number(txtv.value) // O .value lê o texto diitado no input pelo usuário e o Number converte de string para número.
+            var vel = Number(txtv.value) // O .value lê o texto digitado no input pelo usuário e o Number converte de string para número.
             resultado.innerHTML = `Sua velocidade atual é de <strong>${vel} KM/H </strong>`
             if (vel >= 80){
                 resultado.innerHTML += '<br> Você ultrapassou o limite de velocidade. <strong> MULTADO!! </strong>'
