@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Impar?</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            font: normal 1.8em arial;
+            text-align: center;
+            margin: 50px auto;
+        }
+        section{
+            height: 200px;
+            width: 300px;
+            background-color: aquamarine;
+            border-radius: 15px;
+            margin: 50px auto auto auto;
+        }
+        section > div#numero{
+            text-align: center;
+            padding-top: 25px;
+        }
+        section > div#resultado{
+            text-align: center;
+            padding-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Descubra se é par ou impar</h1>
+    <section>
+        <div id="numero">
+            Digite seu número: <input type="number" name="txtnum" id="txtnum"> <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div id="resultado">
+
+        </div>
+    </section>
+    <script>
+        function verificar(){
+            var numero = document.getElementById("txtnum")
+            var resultado = document.getElementById("resultado")
+            
+            if(Number(numero.value) % 2 === 0) {
+                resultado.innerText = `O número ${numero.value} é par.`
+            }else {
+                resultado.innerText = `O número ${numero.value} é impar`
+            }
+            
+        }
+    </script>
+</body>
+</html>

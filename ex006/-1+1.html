@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antecessor e sucessor</title>
+</head>
+<body>
+    <h1>Digite um número!</h1>
+    <section>
+        <div>
+            Descubra o antecessor e o sucessor do número digitado:
+        </div>
+        <div>
+            <input type="number" name="txtnum" id="txtnum"> <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div id="resultado">
+
+        </div>
+    </section>
+    <script>
+        function verificar(){
+            var numero = document.querySelector("input#txtnum")
+            var resultado = document.querySelector("div#resultado")
+            var a = Number(numero.value) - 1
+            var s = Number(numero.value) + 1
+            resultado.innerHTML = `Seu antecessor é ${a} e o seu sucessor é ${s}`
+        }
+    </script>
+</body>
+</html>
