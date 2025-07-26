@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra a Senha</title>
+    <style>
+        @charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #6fdafd;
+    color: white;
+}
+
+header > h1{
+    margin: 50px auto 50px auto;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+section{
+    background-color: white;
+    color: black;
+    width: 500px;
+    
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514);
+}
+section div{
+    margin: 0px;
+    padding: 10px;
+} 
+section p{
+    padding: 5px;
+}
+
+footer{
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: normal;
+    font-style: italic;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Descubra a Senha</h1>
+    </header>
+    <section>
+        <div id="dados">
+            <p>
+                Insira uma senha: <input type="text" name="senha" id="txts">
+                <input type="button" value="Confirmar" onclick="testar()">
+            </p>
+        </div>
+        <div id="res">
+            
+        </div>
+        <div id="delete">
+
+        </div>
+    </section>
+    <footer>
+        <p>Site criado por &copy; Levi Soares</p>
+    </footer>
+    <script>
+        function testar() {
+            
+            let senhaCorreta = '1234'
+            
+            for ( let t = 1; t <= 5; t++) {
+                
+                let senha = getElementById('txts')
+                let res = document.getElementById('res')
+                let apagar = document.getElementById('delete')
+                
+                if(senha.length == 0){
+                    window.alert = 'Digite uma senha'
+                }
+                
+                if (senha === senhaCorreta){
+                    res.innerHTML = 'Senha Correta. <br> ACESSO LIBERADO!!'
+                    break
+                    document.body.style.background = '#0E2E00'
+                } else{
+                    res.innerHTML = `Você tem ${t} chances.`
+
+                    if (t === 5){
+                        let delet = apagar
+                        res.innerHTML = `Você tentou ${t} vezes. <br> ACESSO NEGADO!!`
+                        apagar.innerHTML = 'A página será apagada em 5 segundos...'
+                        
+                        setTimeout(function(){
+                            document.body.innerHTML = '<h1> PÁGINA APAGADA (Danger)'
+                        }, 5000) // 5000 milissegundos = 5 segundos
+                    }
+                }
+            }
+        }
+            
+    </script>
+</body>
+</html>
